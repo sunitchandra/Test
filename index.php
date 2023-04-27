@@ -12,7 +12,7 @@
 	//Initializes MySQLi
 	$conn = mysqli_init();
 
-	mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+	//mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
 	// Establish the connection 'myadmin@mydemoserver'
 	mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL);
