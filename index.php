@@ -3,7 +3,7 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>Hello World</p>'; 
+ <?php echo '<p>Hello World 1</p>'; 
 	$servername = "mysqltestsc.mysql.database.azure.com";
 	$username = "azureadmin";
 	$password = "Rockwell123!@#";
