@@ -35,7 +35,7 @@
 		PRIMARY KEY (`Id`)
 		);
 		')) {
-		printf("Table created\n");
+		echo "<br>Products Table created<br>";
 		}
 		
 		//Create an Insert prepared statement and run it
@@ -46,16 +46,16 @@
 		{
 			mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
 			mysqli_stmt_execute($stmt);
-			printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
+			echo "<br>Inserted: Affected". mysqli_stmt_affected_rows($stmt) . " rows<br>";
 			mysqli_stmt_close($stmt);
 		}
 		
 		//Run the Select query
-		printf("Reading data from table: \n");
+		echo "<br>Reading data from table: <br>";
 		$res = mysqli_query($conn, 'SELECT * FROM Products');
 		while ($row = mysqli_fetch_assoc($res))
 		 {
-			var_dump($row);
+			print_r($row);
 		 }
 	}
 	
