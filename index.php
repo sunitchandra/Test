@@ -3,7 +3,7 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p>Hello World 2</p>'; 
+ <?php echo '<p><b>Hello World From Azure WebApp Connected Via MySQL</b></p>'; 
 	$servername = "mysqltestsc.mysql.database.azure.com";
 	$username = "azureadmin";
 	$password = "Rockwell123!@#";
@@ -51,7 +51,7 @@
 		}
 		
 		//Run the Select query
-		echo "<br>Reading data from table: <br>";
+		echo "<br>Reading data from table: <br><pre>";
 		$res = mysqli_query($conn, 'SELECT * FROM Products');
 		while ($row = mysqli_fetch_assoc($res))
 		 {
