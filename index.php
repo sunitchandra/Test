@@ -20,10 +20,10 @@
 	//If connection failed, show the error
 	if (mysqli_connect_errno())
 	{
-		die('Failed to connect to MySQL: '.mysqli_connect_error());
+		die('<br>Failed to connect to MySQL: '.mysqli_connect_error().'<br>');
 	}
 	else {
-		echo "Connected Sucessfully..!!";
+		echo "<br>Connected Sucessfully..!!<br>";
 		
 		// Run the create table query
 		if (mysqli_query($conn, '
@@ -46,7 +46,7 @@
 		{
 			mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
 			mysqli_stmt_execute($stmt);
-			echo "<br>Inserted: Affected". mysqli_stmt_affected_rows($stmt) . " rows<br>";
+			echo "<br>Inserted: Affected ". mysqli_stmt_affected_rows($stmt) . " rows<br>";
 			mysqli_stmt_close($stmt);
 		}
 		
