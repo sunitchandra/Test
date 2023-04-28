@@ -12,8 +12,6 @@
 	//Initializes MySQLi
 	$conn = mysqli_init();
 
-	//mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
-
 	// Establish the connection 'myadmin@mydemoserver'
 	mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL);
 
@@ -40,7 +38,7 @@
 		
 		//Create an Insert prepared statement and run it
 		$product_name = 'BrandNewProduct';
-		$product_color = 'Blue';
+		$product_color = $_SERVER['HTTP_HOST'];
 		$product_price = 15.5;
 		if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Color, Price) VALUES (?, ?, ?)"))
 		{
