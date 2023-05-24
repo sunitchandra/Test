@@ -4,7 +4,7 @@
  </head>
  <body>
  <?php echo '<p><b>Hello Bhawna, World From Azure WebApp Connected Via MySQL</b></p>'; 
-	$servername = "cx-test1.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
+	$servername = "testrecruitment.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
 	$username = "autorock";  #"azureadmin";
 	$password = "rockwell@123"; #"Rockwell123!@#";
 	$db_name = "testcx13"; #"testdb";
