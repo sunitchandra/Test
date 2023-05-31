@@ -3,17 +3,33 @@
   <title>PHP Test</title>
  </head>
  <body>
- <?php echo '<p><b>Hello Bhawna, This is vNet World From Azure WebApp Connected Via MySQL</b></p>'; 
-	$servername = "cx-test-server.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
+ <?php 
+ echo '<p><b>Hello, World From Azure WebApp VNET Connected Via MySQL</b></p>'; 
+	$conn = mysqli_init();
+	mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+	mysqli_real_connect($conn, 'cx-test-server.mysql.database.azure.com', 'autorock', 'rockwell@123', 'cx-test-13', 3306, MYSQLI_CLIENT_SSL);
+	if (mysqli_connect_errno()) {
+	die('Failed to connect to MySQL: '.mysqli_connect_error());
+	}
+	else{
+		echo "connected";
+	}
+ 
+ 
+ exit;
+ echo '<p><b>Hello Bhawna, World From Azure WebApp Connected Via MySQL</b></p>'; 
+	$servername = "testrecruitment.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
 	$username = "autorock";  #"azureadmin";
 	$password = "rockwell@123"; #"Rockwell123!@#";
-	$db_name = "cx-test-13"; #test-cx-13"; #"testdb";
+	$db_name = "testcx13"; #"testdb";
 
 	//Initializes MySQLi
 	$conn = mysqli_init();
 
 	// Establish the connection 'myadmin@mydemoserver'
 	mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL);
+	
+	
 
 	//If connection failed, show the error
 	if (mysqli_connect_errno())
