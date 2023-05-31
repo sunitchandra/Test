@@ -4,10 +4,10 @@
  </head>
  <body>
  <?php echo '<p><b>Hello Bhawna, This is vNet World From Azure WebApp Connected Via MySQL</b></p>'; 
-	$servername = "testrecruitment.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
+	$servername = "cx-test-server.mysql.database.azure.com"; #"mysqltestsc.mysql.database.azure.com";
 	$username = "autorock";  #"azureadmin";
 	$password = "rockwell@123"; #"Rockwell123!@#";
-	$db_name = "testcx13"; #"testdb";
+	$db_name = "cx-test-13"; #test-cx-13"; #"testdb";
 
 	//Initializes MySQLi
 	$conn = mysqli_init();
